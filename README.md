@@ -40,7 +40,7 @@ Inspired by [Five programming problems every Software Engineer should be able to
 
     $ gradle test
 
-## Commentry ##
+## Commentary ##
 
 Nope, I didn't solve these problems in less then 1 hour. :) Mostly
 because I was doing this at the weekend and I had plenty of other
