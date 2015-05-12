@@ -9,7 +9,7 @@ public class Problem5 {
         return result.toArray(new String[result.size()]);
     }
 
-    private static void possibleExpressionsImpl(int i, int sum, int f, String lastOp, String expr, ArrayList<String> acc) {
+    private static void possibleExpressionsImpl(int i, int sum, int f, String op, String expr, ArrayList<String> acc) {
         if (i > 9) {
             if (sum == 100) {
                 acc.add(expr);
@@ -19,8 +19,6 @@ public class Problem5 {
 
         possibleExpressionsImpl(i + 1, sum + i, i, "+", expr + " + " + i, acc);
         possibleExpressionsImpl(i + 1, sum - i, i, "-", expr + " - " + i, acc);
-        possibleExpressionsImpl(i + 1,
-                sum + f * (lastOp.equals("-") ? 1 : -1) + (f * 10 + i) * (lastOp.equals("-") ? -1 : 1),
-                f * 10 + i, lastOp, expr + i, acc);
+        possibleExpressionsImpl(i + 1, sum + (f * 9 + i) * (op.equals("-") ? -1 : 1), f * 10 + i, op, expr + i, acc);
     }
 }
